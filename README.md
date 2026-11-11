@@ -97,6 +97,6 @@ python -B -X utf8 tests/run_live.py --case conflict --workers 1
 
 ## 提交信息
 
-选题为第三题“企业知识问答 Agent”。用户确认尚未创建 GitHub 仓库，URL 当前未提供。本地 Git 提交完成后，可用 git rev-parse HEAD 取得最终 commit SHA；发布后需填写仓库 URL，私有仓库需授予评审账号访问权限。
+选题为第三题“企业知识问答 Agent”。仓库地址为 [lxcin/enterprise-knowledge-agent](https://github.com/lxcin/enterprise-knowledge-agent)，当前为私有仓库。用 git rev-parse HEAD 取得最终 commit SHA；提交评审前需授予指定评审账号访问权限。
 
 实际投入用时由用户确认未计时，无法可靠恢复累计时长。开发跨多个会话完成，会话跨度不作为工作时长。已验证范围与未完成项见评估文档。

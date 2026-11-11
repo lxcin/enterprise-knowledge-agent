@@ -57,7 +57,7 @@
 | 步骤、参数、返回与决策依据 | [本次完整真实记录](../examples/submission-live.jsonl) 的 actual.trace 中提供 step、decision、工具观察和最终动作。 |
 | 全部业务验收 | 八组用例包括六项必验、原文替换和明确替代关系，本次自动检查 8/8 通过。 |
 | 题号与实际用时 | 第三题，用户确认未计时。 |
-| GitHub 提交 | 本地准备代码和 commit，远端仓库尚未创建，URL 待补。 |
+| GitHub 提交 | [GitHub 仓库](https://github.com/lxcin/enterprise-knowledge-agent) 为私有，评审访问权限由提交者按指定账号设置。 |
 
 本次 normal 路径为 search → finish；missing 路径为 search → 换词 search → finish；tool-failure 路径在检索观察到 D02 两次读取失败后 finish，程序返回 tool_error。实际工具参数和简要依据均在记录中，模型内部思维过程未作为交付材料。
 
