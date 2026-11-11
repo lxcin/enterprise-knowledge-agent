@@ -4,7 +4,7 @@
 
 ## 安装与第一次运行
 
-需要 Python 3.12+。先克隆仓库，再在项目根目录运行后续命令。仓库当前为私有，需要已获授权的 GitHub 账号。Windows 可用 py -3.12 替代 python。
+需要 Python 3.12+。先克隆仓库，再在项目根目录运行后续命令。仓库公开，无需登录即可查看和克隆。Windows 可用 py -3.12 替代 python。
 
 ~~~powershell
 git clone https://github.com/lxcin/enterprise-knowledge-agent.git
@@ -153,6 +153,6 @@ python -B -X utf8 tests/run_live.py --case conflict --workers 1
 
 ## 提交信息
 
-选题为第三题“企业知识问答 Agent”。仓库地址为 [lxcin/enterprise-knowledge-agent](https://github.com/lxcin/enterprise-knowledge-agent)，当前为私有仓库。用 git rev-parse HEAD 取得最终 commit SHA；提交评审前需授予指定评审账号访问权限。
+选题为第三题“企业知识问答 Agent”。仓库地址为 [lxcin/enterprise-knowledge-agent](https://github.com/lxcin/enterprise-knowledge-agent)，当前为公开仓库，评审无需额外授权。用 git rev-parse HEAD 取得最终 commit SHA。
 
 实际投入用时由用户确认未计时，无法可靠恢复累计时长。开发跨多个会话完成，会话跨度不作为工作时长。已验证范围与未完成项见评估文档。
