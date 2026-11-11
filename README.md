@@ -4,7 +4,16 @@
 
 ## 安装与第一次运行
 
-需要 Python 3.12+。在仓库根目录执行。Windows 可用 py -3.12 替代 python。
+需要 Python 3.12+。先克隆仓库，再在项目根目录运行后续命令。仓库当前为私有，需要已获授权的 GitHub 账号。Windows 可用 py -3.12 替代 python。
+
+~~~powershell
+git clone https://github.com/lxcin/enterprise-knowledge-agent.git
+cd enterprise-knowledge-agent
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+~~~
+
+Linux/macOS 使用 source .venv/bin/activate 激活环境，并按所用 shell 设置环境变量。下面的环境变量示例采用 PowerShell。
 
 ```powershell
 python -m pip install -e .
@@ -17,6 +26,53 @@ python -X utf8 -m knowledge_agent '报销期限多久？' --trace
 上例使用已有的 DeepSeek 环境变量，也可自行配置 KNOWLEDGE_API_KEY。默认 [data/](data/) 包含相互冲突的 D01、D02，预期答复应列出 30 天与 15 天并请求确认。--docs 指定资料目录，--history 指定包含 role 和 content 的 JSON 数组。
 
 配置清单见 [.env.example](.env.example)。程序读取进程环境变量，模板文件需由使用者或环境管理工具加载。真实模型调用会发送问题与相关证据，仓库样例均为合成资料。
+
+## 配置与上下文输入
+
+| 配置 | 用途 | 何时需要 |
+|---|---|---|
+| KNOWLEDGE_BASE_URL | 问答服务的基础地址，程序追加 /chat/completions | 真实模型运行 |
+| KNOWLEDGE_MODEL | 服务支持的模型名称 | 真实模型运行 |
+| KNOWLEDGE_API_KEY | 问答服务密钥 | 服务要求认证时 |
+| EMBEDDING_PROVIDER | api 或 local | 使用 --semantic 时 |
+| EMBEDDING_BASE_URL、EMBEDDING_MODEL、EMBEDDING_API_KEY | 向量服务配置，程序追加 /embeddings | API 向量后端 |
+| EMBEDDING_MODEL_PATH | 已准备好的完整模型目录 | 本地向量后端 |
+| EMBEDDING_QUERY_PREFIX | 模型要求的查询前缀 | 可选，默认空 |
+
+如果没有预先设置 DEEPSEEK_API_KEY，请通过自己的环境管理工具设置 KNOWLEDGE_API_KEY。.env.example 是变量清单，复制为 .env 并不会自动加载。服务要求的 /v1 等路径应保留在基础地址中，完整接口路径由程序追加。
+
+API 向量后端可以这样配置，需将占位值替换成实际服务信息。
+
+~~~powershell
+$env:EMBEDDING_PROVIDER = 'api'
+$env:EMBEDDING_BASE_URL = '<embedding 服务基础地址>'
+$env:EMBEDDING_MODEL = '<embedding 模型名称>'
+$env:EMBEDDING_API_KEY = '<embedding 服务密钥>'
+python -X utf8 -m knowledge_agent '报销期限多久？' --semantic --trace
+~~~
+
+对话历史文件使用下面的 JSON 结构，保存为 history.json 后执行追问。
+
+~~~json
+[
+  {"role": "user", "content": "报销期限多久？"},
+  {"role": "assistant", "content": "D01 规定 30 天，D02 规定 15 天，适用关系尚待确认。"}
+]
+~~~
+
+~~~powershell
+python -X utf8 -m knowledge_agent '那超过了还能提交吗？' --history history.json --trace --max-steps 18
+~~~
+
+历史帮助模型理解“超过了”的含义，当前问题仍需检索原文。无模型凭据时可先运行文末的离线演示。
+
+## 我们的思路
+
+核心目标是让每个制度结论都能回到原文。让模型负责理解问题、改写检索词、判断证据是否足够及选择下一步；让程序负责执行工具、记录来源、校验引文和限制步数。
+
+一次 search 尽量交付足够的材料，包括命中条款、同主题制度、表头脚注和明确链接。模型拿到证据后决定回答、核对冲突或继续搜索。关键词适合编号和精确术语，向量作为可选能力处理不同措辞；两者最终都返回实际原文。
+
+我们优先用“替换材料后答案和动作是否变化”验证效果。只有 D01 时答 30 天，增加 D02 时说明冲突，增加明确替代依据时答 15 天。工具读取失败要报告缺口，达到执行上限要明确未完成。设计取舍及具体执行路径见[方案文档](docs/02-solution.md)。
 
 ## 工具与证据
 
