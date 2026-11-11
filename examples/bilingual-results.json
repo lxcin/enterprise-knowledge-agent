@@ -1,0 +1,160 @@
+{
+  "question": "What is the deadline for submitting an expense reimbursement?",
+  "model": "deepseek-flash",
+  "actual": {
+    "status": "conflict",
+    "answer": "The documents give two different submission deadlines, so the applicable deadline cannot be determined without confirmation:\n\n- 《员工费用报销制度》: reimbursement must be submitted within **30 days** after the expense occurs (D01, section 4).\n- 《费用报销时限附表》附表1: for expense reimbursement, counting from the expense date, the submission deadline is **15 days** (D02, table 1).\n\nBoth documents are dated 2025-01-01, and neither states which prevails. Please confirm whether the 30-day rule in the main policy or the 15-day rule in the annex applies. (Under the main policy, a late submission also requires a written explanation reviewed by the finance lead — D01, section 5.)",
+    "gaps": [
+      "Which document takes precedence: the 30-day main policy or the 15-day annex table",
+      "Whether the 15-day table applies only to specific expense types or to all reimbursements"
+    ],
+    "citations": [
+      {
+        "id": "D01@2025-01-01/section-4",
+        "doc_id": "D01",
+        "version_date": "2025-01-01",
+        "kind": "text",
+        "title": "报销提交期限",
+        "page": 2,
+        "quote": "员工应在费用发生后 30 天内提交报销申请。"
+      },
+      {
+        "id": "D02@2025-01-01/table-1",
+        "doc_id": "D02",
+        "version_date": "2025-01-01",
+        "kind": "table",
+        "title": "附表 1 报销提交期限",
+        "page": 1,
+        "quote": "事项：费用报销 | 起算点：费用发生日 | 提交期限：15 天"
+      },
+      {
+        "id": "D01@2025-01-01/section-5",
+        "doc_id": "D01",
+        "version_date": "2025-01-01",
+        "kind": "text",
+        "title": "逾期报销",
+        "page": 2,
+        "quote": "逾期报销申请需提交书面说明，由财务负责人审核。"
+      }
+    ],
+    "trace": [
+      {
+        "action": "evidence",
+        "sources": [
+          {
+            "id": "D01@2025-01-01/section-4",
+            "doc_id": "D01",
+            "version_date": "2025-01-01",
+            "kind": "text",
+            "title": "报销提交期限",
+            "page": 2,
+            "topic": "报销提交期限",
+            "document_title": "员工费用报销制度",
+            "links": [],
+            "text": "员工应在费用发生后 30 天内提交报销申请。"
+          },
+          {
+            "id": "D01@2025-01-01/section-5",
+            "doc_id": "D01",
+            "version_date": "2025-01-01",
+            "kind": "text",
+            "title": "逾期报销",
+            "page": 2,
+            "topic": "逾期报销",
+            "document_title": "员工费用报销制度",
+            "links": [],
+            "text": "逾期报销申请需提交书面说明，由财务负责人审核。"
+          },
+          {
+            "id": "D02@2025-01-01/table-1",
+            "doc_id": "D02",
+            "version_date": "2025-01-01",
+            "kind": "table",
+            "title": "附表 1 报销提交期限",
+            "page": 1,
+            "topic": "报销提交期限",
+            "document_title": "费用报销时限附表",
+            "links": [],
+            "text": "事项：费用报销 | 起算点：费用发生日 | 提交期限：15 天"
+          },
+          {
+            "id": "D03@2025-01-01/figure-1",
+            "doc_id": "D03",
+            "version_date": "2025-01-01",
+            "kind": "figure",
+            "title": "图 1 费用审批流程",
+            "page": 1,
+            "topic": "费用审批流程",
+            "document_title": "费用审批流程",
+            "links": [],
+            "has_original_image": true
+          }
+        ],
+        "pending": [],
+        "errors": {},
+        "checked_topics": [
+          "报销提交期限",
+          "逾期报销",
+          "费用审批流程"
+        ],
+        "queries": [
+          "expense reimbursement submission deadline",
+          "费用报销 提交期限 截止日期",
+          "expense reimbursement policy submit by deadline",
+          "费用报销制度说明报销提交期限、起算日期和逾期申请流程"
+        ]
+      },
+      {
+        "action": "search",
+        "query": "expense reimbursement submission deadline",
+        "doc_id": null,
+        "hits": [
+          {
+            "id": "D01@2025-01-01/section-4",
+            "doc_id": "D01",
+            "version_date": "2025-01-01",
+            "kind": "text",
+            "title": "报销提交期限",
+            "page": 2,
+            "topic": "报销提交期限",
+            "document_title": "员工费用报销制度"
+          },
+          {
+            "id": "D01@2025-01-01/section-5",
+            "doc_id": "D01",
+            "version_date": "2025-01-01",
+            "kind": "text",
+            "title": "逾期报销",
+            "page": 2,
+            "topic": "逾期报销",
+            "document_title": "员工费用报销制度"
+          },
+          {
+            "id": "D02@2025-01-01/table-1",
+            "doc_id": "D02",
+            "version_date": "2025-01-01",
+            "kind": "table",
+            "title": "附表 1 报销提交期限",
+            "page": 1,
+            "topic": "报销提交期限",
+            "document_title": "费用报销时限附表"
+          },
+          {
+            "id": "D03@2025-01-01/figure-1",
+            "doc_id": "D03",
+            "version_date": "2025-01-01",
+            "kind": "figure",
+            "title": "图 1 费用审批流程",
+            "page": 1,
+            "topic": "费用审批流程",
+            "document_title": "费用审批流程"
+          }
+        ]
+      },
+      {
+        "action": "review",
+        "ok": true
+      }
+    ]
+  }
+}

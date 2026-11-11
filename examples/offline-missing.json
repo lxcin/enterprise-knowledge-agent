@@ -1,0 +1,90 @@
+{
+  "execution_mode": "offline_mock",
+  "limitation": "预设动作和审核，仅验证流程；不代表真实模型决策能力。",
+  "case": "missing",
+  "question": "育儿假几天？",
+  "actual": {
+    "status": "insufficient_evidence",
+    "answer": "无法核实该问题。",
+    "gaps": [
+      "可用原文依据"
+    ],
+    "citations": [],
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "action": "search",
+          "parameters": {
+            "query": "育儿假几天？"
+          },
+          "reason": "离线固定流程：先查询样例资料"
+        },
+        "action": "evidence",
+        "sources": [],
+        "pending": [],
+        "errors": {},
+        "checked_topics": [],
+        "queries": [
+          "育儿假几天？"
+        ]
+      },
+      {
+        "step": 1,
+        "decision": {
+          "action": "search",
+          "parameters": {
+            "query": "育儿假几天？"
+          },
+          "reason": "离线固定流程：先查询样例资料"
+        },
+        "action": "search",
+        "query": "育儿假几天？",
+        "doc_id": null,
+        "hits": []
+      },
+      {
+        "step": 2,
+        "decision": {
+          "action": "search",
+          "parameters": {
+            "query": "子女照护假"
+          },
+          "reason": "离线固定流程：换词检索缺失的政策"
+        },
+        "action": "evidence",
+        "sources": [],
+        "pending": [],
+        "errors": {},
+        "checked_topics": [],
+        "queries": [
+          "子女照护假"
+        ]
+      },
+      {
+        "step": 2,
+        "decision": {
+          "action": "search",
+          "parameters": {
+            "query": "子女照护假"
+          },
+          "reason": "离线固定流程：换词检索缺失的政策"
+        },
+        "action": "search",
+        "query": "子女照护假",
+        "doc_id": null,
+        "hits": []
+      },
+      {
+        "step": 3,
+        "decision": {
+          "action": "finish",
+          "parameters": {},
+          "reason": "离线固定流程：按样例场景输出，模型审核同样为 Mock"
+        },
+        "action": "review",
+        "ok": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+test_bad_quote_and_semantic_review_feedback (test_acceptance.AcceptanceTests.test_bad_quote_and_semantic_review_feedback) ... ok
+test_clear_answer_changes_when_source_changes (test_acceptance.AcceptanceTests.test_clear_answer_changes_when_source_changes) ... ok
+test_conflict_blocks_answer_before_both_sources_are_read (test_acceptance.AcceptanceTests.test_conflict_blocks_answer_before_both_sources_are_read) ... ok
+test_cosmetic_query_changes_do_not_count_as_a_new_search (test_acceptance.AcceptanceTests.test_cosmetic_query_changes_do_not_count_as_a_new_search) ... ok
+test_cross_document_footnote_resolves_conflict (test_acceptance.AcceptanceTests.test_cross_document_footnote_resolves_conflict) ... ok
+test_failed_read_has_two_attempts_and_never_returns_answer (test_acceptance.AcceptanceTests.test_failed_read_has_two_attempts_and_never_returns_answer) ... ok
+test_flow_chart_uses_original_image (test_acceptance.AcceptanceTests.test_flow_chart_uses_original_image) ... ok
+test_follow_up_uses_current_source (test_acceptance.AcceptanceTests.test_follow_up_uses_current_source) ... ok
+test_model_failure_is_structured (test_acceptance.AcceptanceTests.test_model_failure_is_structured) ... ok
+test_outside_corpus (test_acceptance.AcceptanceTests.test_outside_corpus) ... ok
+test_paraphrase_search (test_acceptance.AcceptanceTests.test_paraphrase_search) ... ok
+test_transient_read_failure_recovers (test_acceptance.AcceptanceTests.test_transient_read_failure_recovers) ... ok
+test_unfinished_topic_blocks_no_citation_draft (test_acceptance.AcceptanceTests.test_unfinished_topic_blocks_no_citation_draft) ... ok
+test_step_limit_reports_incomplete (test_acceptance.BudgetLimitTests.test_step_limit_reports_incomplete) ... ok
+test_one_search_supports_conflict_answer (test_acceptance.EvidenceBundleTests.test_one_search_supports_conflict_answer) ... ok
+test_search_expands_replacement_links (test_acceptance.EvidenceBundleTests.test_search_expands_replacement_links) ... ok
+test_distinct_expansions_satisfy_supplementary_search (test_acceptance.QueryBudgetTests.test_distinct_expansions_satisfy_supplementary_search) ... ok
+test_direct_mode_does_not_skip_semantic_review (test_acceptance.RoutingTests.test_direct_mode_does_not_skip_semantic_review) ... ok
+test_greeting_can_finish_without_search (test_acceptance.RoutingTests.test_greeting_can_finish_without_search) ... ok
+test_policy_claim_without_search_is_blocked (test_acceptance.RoutingTests.test_policy_claim_without_search_is_blocked) ... ok
+test_api_reorders_and_normalizes_vectors (test_embeddings.EmbeddingTests.test_api_reorders_and_normalizes_vectors) ... ok
+test_injected_provider_builds_index_without_model_libraries (test_embeddings.EmbeddingTests.test_injected_provider_builds_index_without_model_libraries) ... ok
+test_invalid_vectors_fail_explicitly (test_embeddings.EmbeddingTests.test_invalid_vectors_fail_explicitly) ... ok
+test_keyword_mode_requires_no_embedding_configuration (test_embeddings.EmbeddingTests.test_keyword_mode_requires_no_embedding_configuration) ... ok
+test_model_name_is_not_treated_as_a_local_cache_lookup (test_embeddings.EmbeddingTests.test_model_name_is_not_treated_as_a_local_cache_lookup) ... ok
+test_semantic_mode_requires_explicit_provider (test_embeddings.EmbeddingTests.test_semantic_mode_requires_explicit_provider) ... ok
+test_markdown_import_and_duplicate_version_protection (test_import.ImportTests.test_markdown_import_and_duplicate_version_protection) ... ok
+test_pdf_body_and_table_are_searchable_and_citable (test_import.ImportTests.test_pdf_body_and_table_are_searchable_and_citable) ... ok
+test_scan_page_keeps_original_visual_evidence (test_import.ImportTests.test_scan_page_keeps_original_visual_evidence) ... ok
+test_visual_page_replaces_flattened_chart_text (test_import.ImportTests.test_visual_page_replaces_flattened_chart_text) ... ok
+test_response_failures_are_separate_from_network_errors (test_model.ModelAdapterTests.test_response_failures_are_separate_from_network_errors) ... ok
+test_transport_errors_have_distinct_codes (test_model.ModelAdapterTests.test_transport_errors_have_distinct_codes) ... ok
+test_valid_decision_is_returned (test_model.ModelAdapterTests.test_valid_decision_is_returned) ... ok
+test_chinese_question_finds_english_policy (test_retrieval.RetrievalTests.test_chinese_question_finds_english_policy) ... ok
+test_english_question_expands_to_chinese_evidence (test_retrieval.RetrievalTests.test_english_question_expands_to_chinese_evidence) ... ok
+test_exact_source_lookup_respects_document_scope (test_retrieval.RetrievalTests.test_exact_source_lookup_respects_document_scope) ... ok
+test_hypothetical_description_cannot_be_cited (test_retrieval.RetrievalTests.test_hypothetical_description_cannot_be_cited) ... ok
+test_lookup_by_full_width_document_id (test_retrieval.RetrievalTests.test_lookup_by_full_width_document_id) ... ok
+test_original_results_survive_unhelpful_expansion (test_retrieval.RetrievalTests.test_original_results_survive_unhelpful_expansion) ... ok
+test_reference_id_is_prioritized_even_with_other_keywords (test_retrieval.RetrievalTests.test_reference_id_is_prioritized_even_with_other_keywords) ... ok
+test_semantic_chunking_preserves_text_and_size (test_retrieval.RetrievalTests.test_semantic_chunking_preserves_text_and_size) ... ok
+test_table_ranking_prefers_terms_in_the_same_row (test_retrieval.RetrievalTests.test_table_ranking_prefers_terms_in_the_same_row) ... ok
+
+----------------------------------------------------------------------
+Ran 42 tests in 0.322s
+
+OK

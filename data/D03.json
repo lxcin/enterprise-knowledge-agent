@@ -1,0 +1,16 @@
+{
+  "doc_id": "D03",
+  "version_date": "2025-01-01",
+  "title": "费用审批流程",
+  "blocks": [
+    {
+      "id": "figure-1",
+      "kind": "figure",
+      "title": "图 1 费用审批流程",
+      "topic": "费用审批流程",
+      "page": 1,
+      "text": "员工提交 部门主管 财务复核",
+      "asset": "approval-flow.png"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+[
+  {
+    "id": "normal",
+    "question": "报销期限多久？",
+    "doc_ids": [
+      "D01"
+    ],
+    "expected_status": [
+      "answered"
+    ],
+    "required_quotes": [
+      "费用发生后 30 天"
+    ]
+  },
+  {
+    "id": "changed",
+    "question": "报销期限多久？",
+    "doc_ids": [
+      "D01"
+    ],
+    "expected_status": [
+      "answered"
+    ],
+    "overlays": [
+      "data/variants/changed"
+    ],
+    "required_quotes": [
+      "费用发生后 45 天"
+    ]
+  },
+  {
+    "id": "conflict",
+    "question": "报销期限多久？",
+    "doc_ids": [
+      "D01",
+      "D02"
+    ],
+    "expected_status": [
+      "conflict"
+    ],
+    "required_quotes": [
+      "30 天",
+      "15 天"
+    ]
+  },
+  {
+    "id": "replacement",
+    "question": "报销期限多久？",
+    "doc_ids": [
+      "D01",
+      "D02",
+      "D04"
+    ],
+    "expected_status": [
+      "answered"
+    ],
+    "overlays": [
+      "data/variants/replacement"
+    ],
+    "required_quotes": [
+      "15 天",
+      "替代 D01 第四条"
+    ]
+  },
+  {
+    "id": "missing",
+    "question": "公司给员工多少天育儿假？",
+    "doc_ids": [
+      "D01",
+      "D02"
+    ],
+    "expected_status": [
+      "insufficient_evidence"
+    ],
+    "no_citations": true
+  },
+  {
+    "id": "paraphrase",
+    "question": "发票拿到手以后最晚何时能交？",
+    "doc_ids": [
+      "D01"
+    ],
+    "expected_status": [
+      "answered",
+      "needs_clarification"
+    ],
+    "required_quotes": [
+      "费用发生后 30 天"
+    ]
+  },
+  {
+    "id": "followup",
+    "question": "那超过了还能报吗？",
+    "doc_ids": [
+      "D01"
+    ],
+    "expected_status": [
+      "answered"
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "报销期限多久？"
+      },
+      {
+        "role": "assistant",
+        "content": "根据 D01，员工应在费用发生后 30 天内提交报销申请。"
+      }
+    ],
+    "required_quotes": [
+      "逾期报销申请需提交书面说明"
+    ]
+  },
+  {
+    "id": "tool-failure",
+    "question": "报销期限多久？",
+    "doc_ids": [
+      "D01",
+      "D02"
+    ],
+    "expected_status": [
+      "tool_error"
+    ],
+    "fail_read": "D02@2025-01-01/table-1",
+    "no_citations": true
+  }
+]

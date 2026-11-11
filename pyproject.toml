@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enterprise-knowledge-agent"
+version = "0.1.0"
+requires-python = ">=3.12"
+description = "Evidence-based enterprise knowledge question answering agent"
+
+[project.optional-dependencies]
+local-vector = ["sentence-transformers>=3,<6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

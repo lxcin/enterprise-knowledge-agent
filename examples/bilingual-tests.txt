@@ -1,0 +1,32 @@
+test_bad_quote_and_semantic_review_feedback (test_acceptance.AcceptanceTests.test_bad_quote_and_semantic_review_feedback) ... ok
+test_clear_answer_changes_when_source_changes (test_acceptance.AcceptanceTests.test_clear_answer_changes_when_source_changes) ... ok
+test_conflict_blocks_answer_before_both_sources_are_read (test_acceptance.AcceptanceTests.test_conflict_blocks_answer_before_both_sources_are_read) ... ok
+test_cosmetic_query_changes_do_not_count_as_a_new_search (test_acceptance.AcceptanceTests.test_cosmetic_query_changes_do_not_count_as_a_new_search) ... ok
+test_cross_document_footnote_resolves_conflict (test_acceptance.AcceptanceTests.test_cross_document_footnote_resolves_conflict) ... ok
+test_failed_read_has_two_attempts_and_never_returns_answer (test_acceptance.AcceptanceTests.test_failed_read_has_two_attempts_and_never_returns_answer) ... ok
+test_flow_chart_uses_original_image (test_acceptance.AcceptanceTests.test_flow_chart_uses_original_image) ... ok
+test_follow_up_uses_current_source (test_acceptance.AcceptanceTests.test_follow_up_uses_current_source) ... ok
+test_model_failure_is_structured (test_acceptance.AcceptanceTests.test_model_failure_is_structured) ... ok
+test_outside_corpus (test_acceptance.AcceptanceTests.test_outside_corpus) ... ok
+test_paraphrase_search (test_acceptance.AcceptanceTests.test_paraphrase_search) ... ok
+test_transient_read_failure_recovers (test_acceptance.AcceptanceTests.test_transient_read_failure_recovers) ... ok
+test_unfinished_topic_blocks_no_citation_draft (test_acceptance.AcceptanceTests.test_unfinished_topic_blocks_no_citation_draft) ... ok
+test_one_search_supports_conflict_answer (test_acceptance.EvidenceBundleTests.test_one_search_supports_conflict_answer) ... ok
+test_search_expands_replacement_links (test_acceptance.EvidenceBundleTests.test_search_expands_replacement_links) ... ok
+test_markdown_import_and_duplicate_version_protection (test_import.ImportTests.test_markdown_import_and_duplicate_version_protection) ... ok
+test_pdf_body_and_table_are_searchable_and_citable (test_import.ImportTests.test_pdf_body_and_table_are_searchable_and_citable) ... ok
+test_scan_page_keeps_original_visual_evidence (test_import.ImportTests.test_scan_page_keeps_original_visual_evidence) ... ok
+test_visual_page_replaces_flattened_chart_text (test_import.ImportTests.test_visual_page_replaces_flattened_chart_text) ... ok
+test_chinese_question_finds_english_policy (test_retrieval.RetrievalTests.test_chinese_question_finds_english_policy) ... ok
+test_english_question_expands_to_chinese_evidence (test_retrieval.RetrievalTests.test_english_question_expands_to_chinese_evidence) ... ok
+test_exact_source_lookup_respects_document_scope (test_retrieval.RetrievalTests.test_exact_source_lookup_respects_document_scope) ... ok
+test_hypothetical_description_cannot_be_cited (test_retrieval.RetrievalTests.test_hypothetical_description_cannot_be_cited) ... ok
+test_lookup_by_full_width_document_id (test_retrieval.RetrievalTests.test_lookup_by_full_width_document_id) ... ok
+test_original_results_survive_unhelpful_expansion (test_retrieval.RetrievalTests.test_original_results_survive_unhelpful_expansion) ... ok
+test_reference_id_is_prioritized_even_with_other_keywords (test_retrieval.RetrievalTests.test_reference_id_is_prioritized_even_with_other_keywords) ... ok
+test_table_ranking_prefers_terms_in_the_same_row (test_retrieval.RetrievalTests.test_table_ranking_prefers_terms_in_the_same_row) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.710s
+
+OK

@@ -1,0 +1,148 @@
+{
+  "execution_mode": "offline_mock",
+  "limitation": "预设动作和审核，仅验证流程；不代表真实模型决策能力。",
+  "case": "conflict",
+  "question": "报销期限多久？",
+  "actual": {
+    "status": "conflict",
+    "answer": "D01 为 30 天，D02 为 15 天，请确认适用制度。",
+    "gaps": [
+      "适用范围与优先级"
+    ],
+    "citations": [
+      {
+        "id": "D01@2025-01-01/section-4",
+        "doc_id": "D01",
+        "version_date": "2025-01-01",
+        "kind": "text",
+        "title": "报销提交期限",
+        "page": 2,
+        "quote": "员工应在费用发生后 30 天内提交报销申请。"
+      },
+      {
+        "id": "D02@2025-01-01/table-1",
+        "doc_id": "D02",
+        "version_date": "2025-01-01",
+        "kind": "table",
+        "title": "附表 1 报销提交期限",
+        "page": 1,
+        "quote": "事项：费用报销 | 起算点：费用发生日 | 提交期限：15 天"
+      }
+    ],
+    "trace": [
+      {
+        "step": 1,
+        "decision": {
+          "action": "search",
+          "parameters": {
+            "query": "报销期限多久？"
+          },
+          "reason": "离线固定流程：先查询样例资料"
+        },
+        "action": "evidence",
+        "sources": [
+          {
+            "id": "D01@2025-01-01/section-4",
+            "doc_id": "D01",
+            "version_date": "2025-01-01",
+            "kind": "text",
+            "title": "报销提交期限",
+            "page": 2,
+            "topic": "报销提交期限",
+            "document_title": "员工费用报销制度",
+            "links": [],
+            "text": "员工应在费用发生后 30 天内提交报销申请。"
+          },
+          {
+            "id": "D02@2025-01-01/table-1",
+            "doc_id": "D02",
+            "version_date": "2025-01-01",
+            "kind": "table",
+            "title": "附表 1 报销提交期限",
+            "page": 1,
+            "topic": "报销提交期限",
+            "document_title": "费用报销时限附表",
+            "links": [],
+            "text": "事项：费用报销 | 起算点：费用发生日 | 提交期限：15 天"
+          },
+          {
+            "id": "D01@2025-01-01/section-5",
+            "doc_id": "D01",
+            "version_date": "2025-01-01",
+            "kind": "text",
+            "title": "逾期报销",
+            "page": 2,
+            "topic": "逾期报销",
+            "document_title": "员工费用报销制度",
+            "links": [],
+            "text": "逾期报销申请需提交书面说明，由财务负责人审核。"
+          }
+        ],
+        "pending": [],
+        "errors": {},
+        "checked_topics": [
+          "报销提交期限",
+          "逾期报销"
+        ],
+        "queries": [
+          "报销期限多久？"
+        ]
+      },
+      {
+        "step": 1,
+        "decision": {
+          "action": "search",
+          "parameters": {
+            "query": "报销期限多久？"
+          },
+          "reason": "离线固定流程：先查询样例资料"
+        },
+        "action": "search",
+        "query": "报销期限多久？",
+        "doc_id": null,
+        "hits": [
+          {
+            "id": "D01@2025-01-01/section-4",
+            "doc_id": "D01",
+            "version_date": "2025-01-01",
+            "kind": "text",
+            "title": "报销提交期限",
+            "page": 2,
+            "topic": "报销提交期限",
+            "document_title": "员工费用报销制度"
+          },
+          {
+            "id": "D02@2025-01-01/table-1",
+            "doc_id": "D02",
+            "version_date": "2025-01-01",
+            "kind": "table",
+            "title": "附表 1 报销提交期限",
+            "page": 1,
+            "topic": "报销提交期限",
+            "document_title": "费用报销时限附表"
+          },
+          {
+            "id": "D01@2025-01-01/section-5",
+            "doc_id": "D01",
+            "version_date": "2025-01-01",
+            "kind": "text",
+            "title": "逾期报销",
+            "page": 2,
+            "topic": "逾期报销",
+            "document_title": "员工费用报销制度"
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "decision": {
+          "action": "finish",
+          "parameters": {},
+          "reason": "离线固定流程：按样例场景输出，模型审核同样为 Mock"
+        },
+        "action": "review",
+        "ok": true
+      }
+    ]
+  }
+}
